@@ -5,202 +5,1002 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Privacy Policy | EZ Good Finds</title>
+  <meta
+    name="description"
+    content="Privacy Policy for EZ Good Finds and its social-media publishing integrations."
+  />
 
   <style>
+    :root {
+      --bg: #050914;
+      --bg-soft: #081120;
+      --card: rgba(11, 20, 38, 0.78);
+      --card-solid: #0b1426;
+      --line: rgba(96, 165, 250, 0.16);
+      --line-strong: rgba(96, 165, 250, 0.35);
+
+      --text: #f8fafc;
+      --text-soft: #cbd5e1;
+      --muted: #7f91ab;
+
+      --blue: #3b82f6;
+      --blue-light: #60a5fa;
+      --cyan: #38bdf8;
+
+      --shadow: 0 35px 100px rgba(0, 0, 0, 0.45);
+      --radius: 24px;
+    }
+
     * {
       box-sizing: border-box;
     }
 
-    body {
-      margin: 0;
-      font-family: Inter, Arial, sans-serif;
-      background:
-        radial-gradient(circle at top left, #172554 0%, transparent 35%),
-        #080d18;
-      color: #e5e7eb;
-      line-height: 1.7;
+    html {
+      scroll-behavior: smooth;
     }
 
-    header {
-      padding: 70px 20px 45px;
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      line-height: 1.75;
+
+      background:
+        radial-gradient(
+          800px circle at 15% -5%,
+          rgba(37, 99, 235, 0.28),
+          transparent 52%
+        ),
+        radial-gradient(
+          700px circle at 90% 10%,
+          rgba(14, 165, 233, 0.12),
+          transparent 50%
+        ),
+        linear-gradient(
+          180deg,
+          #050914 0%,
+          #07101e 45%,
+          #050914 100%
+        );
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.22;
+
+      background-image:
+        linear-gradient(
+          rgba(255, 255, 255, 0.025) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.025) 1px,
+          transparent 1px
+        );
+
+      background-size: 42px 42px;
+      mask-image:
+        linear-gradient(
+          to bottom,
+          black,
+          transparent 75%
+        );
+    }
+
+    .wrap {
+      width: min(1080px, calc(100% - 32px));
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ================================
+       HERO
+    ================================= */
+
+    .hero {
+      padding: 80px 0 54px;
       text-align: center;
     }
 
     .brand {
-      display: inline-block;
-      padding: 7px 14px;
-      border: 1px solid #334155;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+
+      margin-bottom: 28px;
+      padding: 9px 15px;
+
       border-radius: 999px;
-      font-size: 14px;
-      letter-spacing: 0.08em;
+      border: 1px solid var(--line-strong);
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(59, 130, 246, 0.10),
+          rgba(59, 130, 246, 0.03)
+        );
+
+      box-shadow:
+        inset 0 1px rgba(255, 255, 255, 0.06),
+        0 0 35px rgba(37, 99, 235, 0.08);
+
+      color: #bfdbfe;
+      font-size: 13px;
+      font-weight: 750;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: #93c5fd;
-      margin-bottom: 18px;
+    }
+
+    .brand-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+
+      background: var(--blue-light);
+
+      box-shadow:
+        0 0 8px rgba(96, 165, 250, 0.9),
+        0 0 22px rgba(96, 165, 250, 0.5);
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(36px, 6vw, 60px);
-      color: white;
-      letter-spacing: -0.03em;
+
+      font-size:
+        clamp(42px, 7vw, 74px);
+
+      line-height: 1;
+      letter-spacing: -0.055em;
+      font-weight: 850;
     }
 
-    .subtitle {
-      max-width: 620px;
-      margin: 18px auto 0;
+    .gradient-text {
+      background:
+        linear-gradient(
+          90deg,
+          #ffffff 0%,
+          #dbeafe 45%,
+          #60a5fa 100%
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 24px auto 0;
+
+      font-size:
+        clamp(16px, 2vw, 19px);
+
       color: #94a3b8;
-      font-size: 17px;
     }
 
-    main {
-      width: min(900px, calc(100% - 32px));
-      margin: 0 auto 70px;
-      background: rgba(15, 23, 42, 0.88);
-      border: 1px solid #1e293b;
-      border-radius: 24px;
-      padding: clamp(28px, 5vw, 55px);
-      box-shadow: 0 30px 80px rgba(0,0,0,.35);
+    .status-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      margin-top: 28px;
+    }
+
+    .status {
+      padding: 8px 12px;
+
+      border: 1px solid rgba(148, 163, 184, 0.12);
+      border-radius: 10px;
+
+      background: rgba(15, 23, 42, 0.55);
+
+      color: #94a3b8;
+      font-size: 13px;
+    }
+
+    /* ================================
+       MAIN POLICY CARD
+    ================================= */
+
+    .policy {
+      position: relative;
+      overflow: hidden;
+
+      padding:
+        clamp(28px, 6vw, 62px);
+
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(15, 27, 49, 0.92),
+          rgba(7, 15, 29, 0.94)
+        );
+
+      box-shadow: var(--shadow);
+
+      backdrop-filter: blur(14px);
+    }
+
+    .policy::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 8%;
+      right: 8%;
+      height: 1px;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(96, 165, 250, 0.75),
+          transparent
+        );
     }
 
     section {
-      margin-bottom: 38px;
+      padding: 8px 0 34px;
+      margin-bottom: 28px;
+
+      border-bottom:
+        1px solid rgba(148, 163, 184, 0.10);
     }
 
     section:last-child {
       margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .section-number {
+      display: block;
+      margin-bottom: 6px;
+
+      color: var(--blue-light);
+
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
     }
 
     h2 {
-      margin-bottom: 10px;
+      margin: 0 0 14px;
+
       color: white;
-      font-size: 21px;
+
+      font-size:
+        clamp(21px, 3vw, 27px);
+
+      letter-spacing: -0.025em;
+    }
+
+    h3 {
+      margin: 25px 0 8px;
+
+      color: #dbeafe;
+
+      font-size: 17px;
+    }
+
+    p,
+    li {
+      color: var(--text-soft);
     }
 
     p {
-      margin: 0;
-      color: #cbd5e1;
+      margin: 0 0 15px;
     }
 
-    a {
-      color: #60a5fa;
+    ul {
+      margin: 12px 0 0;
+      padding-left: 22px;
     }
 
-    footer {
-      text-align: center;
-      padding: 0 20px 45px;
-      color: #64748b;
+    li {
+      margin-bottom: 9px;
+    }
+
+    strong {
+      color: #f1f5f9;
+    }
+
+    /* ================================
+       PLATFORM BOXES
+    ================================= */
+
+    .platform-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 12px;
+
+      margin-top: 22px;
+    }
+
+    .platform {
+      padding: 17px;
+
+      border:
+        1px solid rgba(96, 165, 250, 0.13);
+
+      border-radius: 15px;
+
+      background:
+        rgba(59, 130, 246, 0.045);
+    }
+
+    .platform strong {
+      display: block;
+      margin-bottom: 5px;
+
+      color: #bfdbfe;
       font-size: 14px;
     }
+
+    .platform span {
+      display: block;
+
+      color: #94a3b8;
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    /* ================================
+       HIGHLIGHT
+    ================================= */
+
+    .notice {
+      margin-top: 20px;
+      padding: 18px 20px;
+
+      border:
+        1px solid rgba(56, 189, 248, 0.18);
+
+      border-radius: 15px;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(37, 99, 235, 0.09),
+          rgba(14, 165, 233, 0.035)
+        );
+    }
+
+    .notice p {
+      margin: 0;
+      color: #bfdbfe;
+      font-size: 14px;
+    }
+
+    /* ================================
+       LINKS
+    ================================= */
+
+    a {
+      color: var(--blue-light);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #93c5fd;
+      text-decoration: underline;
+    }
+
+    /* ================================
+       FOOTER
+    ================================= */
+
+    footer {
+      padding: 42px 0 55px;
+      text-align: center;
+    }
+
+    footer .name {
+      color: #cbd5e1;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    footer .meta {
+      margin-top: 7px;
+      color: #64748b;
+      font-size: 13px;
+    }
+
+    /* ================================
+       MOBILE
+    ================================= */
+
+    @media (max-width: 700px) {
+
+      .hero {
+        padding-top: 58px;
+      }
+
+      .platform-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .policy {
+        border-radius: 18px;
+      }
+
+    }
+
   </style>
 </head>
 
 <body>
 
-<header>
-  <div class="brand">EZ Good Finds</div>
+  <div class="wrap">
 
-  <h1>Privacy Policy</h1>
+    <header class="hero">
 
-  <p class="subtitle">
-    How EZ Good Finds handles information used through our
-    social-media publishing integrations.
-  </p>
-</header>
+      <div class="brand">
+        <span class="brand-dot"></span>
+        EZ Good Finds
+      </div>
 
-<main>
+      <h1>
+        <span class="gradient-text">
+          Privacy Policy
+        </span>
+      </h1>
 
-  <section>
-    <h2>About EZ Good Finds</h2>
+      <p>
+        This policy explains how EZ Good Finds handles
+        information in connection with our content,
+        publishing tools and social-media integrations.
+      </p>
 
-    <p>
-      EZ Good Finds is a technology content and media brand.
-      This privacy policy explains how information is handled
-      when EZ Good Finds uses third-party platform integrations,
-      including Pinterest.
-    </p>
-  </section>
+      <div class="status-row">
+        <div class="status">
+          Effective September 5, 2026
+        </div>
 
-  <section>
-    <h2>Pinterest Integration</h2>
+        <div class="status">
+          EZ Good Finds
+        </div>
+      </div>
 
-    <p>
-      EZ Good Finds uses Pinterest API access to authenticate
-      and manage its own Pinterest business account, including
-      creating, scheduling and managing Pins through a
-      self-hosted Postiz instance.
-    </p>
-  </section>
+    </header>
 
-  <section>
-    <h2>Data We Use</h2>
 
-    <p>
-      Information accessed through Pinterest is limited to what
-      is necessary to authenticate the EZ Good Finds account and
-      perform authorised publishing and account-management
-      actions.
-    </p>
-  </section>
+    <main class="policy">
 
-  <section>
-    <h2>How Data Is Used</h2>
+      <!-- 01 -->
 
-    <p>
-      Pinterest data is used only for operating the publishing
-      integration. EZ Good Finds does not sell, rent, scrape,
-      profile or commercially redistribute Pinterest user data.
-    </p>
-  </section>
+      <section>
 
-  <section>
-    <h2>Artificial Intelligence</h2>
+        <span class="section-number">
+          01 — Overview
+        </span>
 
-    <p>
-      Pinterest user data obtained through the integration is
-      not used to train artificial intelligence models.
-    </p>
-  </section>
+        <h2>About EZ Good Finds</h2>
 
-  <section>
-    <h2>Authentication & Security</h2>
+        <p>
+          EZ Good Finds is a technology-focused content
+          and media brand that creates and publishes
+          technology-related content across social-media
+          platforms.
+        </p>
 
-    <p>
-      Authentication credentials and access tokens are used only
-      for operating authorised integrations and are not
-      intentionally shared with unrelated third parties.
-    </p>
-  </section>
+        <p>
+          This Privacy Policy describes how information
+          may be handled when EZ Good Finds uses
+          third-party platforms, APIs and publishing
+          integrations to manage its own social-media
+          accounts and content.
+        </p>
 
-  <section>
-    <h2>Data Retention</h2>
+      </section>
 
-    <p>
-      If an integration is disconnected or discontinued,
-      related access credentials may be revoked or deleted when
-      they are no longer required.
-    </p>
-  </section>
 
-  <section>
-    <h2>Contact</h2>
+      <!-- 02 -->
 
-    <p>
-      Questions about this privacy policy can be sent to:
-      <a href="mailto:hometechez@gmail.com">hometechez@gmail.com</a>
-    </p>
-  </section>
+      <section>
 
-  <section>
-    <h2>Last Updated</h2>
+        <span class="section-number">
+          02 — Information
+        </span>
 
-    <p>September 5, 2026</p>
-  </section>
+        <h2>Information We May Process</h2>
 
-</main>
+        <p>
+          When a social-media account is connected to an
+          authorised integration, EZ Good Finds may process
+          limited information required for authentication
+          and publishing functionality.
+        </p>
 
-<footer>
-  © 2026 EZ Good Finds
-</footer>
+        <p>
+          Depending on the platform, this may include:
+        </p>
+
+        <ul>
+          <li>
+            account or channel identifiers;
+          </li>
+
+          <li>
+            authentication tokens and authorisation data;
+          </li>
+
+          <li>
+            account information provided by the connected
+            platform;
+          </li>
+
+          <li>
+            content created or selected for publishing;
+          </li>
+
+          <li>
+            publishing status and information required to
+            create, schedule, edit or manage posts.
+          </li>
+        </ul>
+
+        <p>
+          EZ Good Finds does not intentionally collect
+          unnecessary private information about users of
+          social-media platforms.
+        </p>
+
+      </section>
+
+
+      <!-- 03 -->
+
+      <section>
+
+        <span class="section-number">
+          03 — Integrations
+        </span>
+
+        <h2>Social-Media Integrations</h2>
+
+        <p>
+          EZ Good Finds may connect its own social-media
+          accounts to authorised APIs or publishing tools
+          in order to create, schedule and manage content.
+        </p>
+
+        <div class="platform-grid">
+
+          <div class="platform">
+            <strong>Pinterest</strong>
+
+            <span>
+              Pinterest API access may be used to
+              authenticate the EZ Good Finds business
+              account and create, schedule or manage Pins.
+            </span>
+          </div>
+
+          <div class="platform">
+            <strong>Meta Platforms</strong>
+
+            <span>
+              EZ Good Finds may connect authorised
+              Facebook, Instagram or Threads accounts for
+              publishing and account-management purposes.
+            </span>
+          </div>
+
+          <div class="platform">
+            <strong>YouTube</strong>
+
+            <span>
+              Google or YouTube APIs may be used for
+              authorised publishing and management of the
+              EZ Good Finds YouTube channel.
+            </span>
+          </div>
+
+          <div class="platform">
+            <strong>TikTok</strong>
+
+            <span>
+              TikTok integrations may be used to
+              authenticate and publish approved content to
+              the EZ Good Finds TikTok account.
+            </span>
+          </div>
+
+          <div class="platform">
+            <strong>X</strong>
+
+            <span>
+              X API access may be used for authorised
+              publishing and management of content
+              belonging to EZ Good Finds.
+            </span>
+          </div>
+
+          <div class="platform">
+            <strong>Reddit</strong>
+
+            <span>
+              Reddit API access may be used to authenticate
+              the EZ Good Finds account and submit or
+              manage content where permitted.
+            </span>
+          </div>
+
+        </div>
+
+        <div class="notice">
+
+          <p>
+            Platforms listed above may be connected at
+            different times. Listing a platform here does
+            not necessarily mean that an integration is
+            currently active.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- 04 -->
+
+      <section>
+
+        <span class="section-number">
+          04 — Pinterest
+        </span>
+
+        <h2>Pinterest API Usage</h2>
+
+        <p>
+          EZ Good Finds may use Pinterest API access to
+          authenticate and manage its own Pinterest
+          business account, including creating, scheduling
+          and managing Pins through authorised publishing
+          software.
+        </p>
+
+        <p>
+          Pinterest information obtained through this
+          integration is used only as reasonably necessary
+          to operate the authorised publishing workflow.
+        </p>
+
+        <p>
+          EZ Good Finds does not sell, rent, scrape,
+          profile or commercially redistribute Pinterest
+          user data obtained through the API.
+        </p>
+
+      </section>
+
+
+      <!-- 05 -->
+
+      <section>
+
+        <span class="section-number">
+          05 — Purpose
+        </span>
+
+        <h2>How Information Is Used</h2>
+
+        <p>
+          Information obtained through authorised
+          integrations may be used to:
+        </p>
+
+        <ul>
+          <li>
+            authenticate connected EZ Good Finds accounts;
+          </li>
+
+          <li>
+            create and publish content;
+          </li>
+
+          <li>
+            schedule content for future publication;
+          </li>
+
+          <li>
+            edit or manage content where supported;
+          </li>
+
+          <li>
+            confirm whether publication succeeded or
+            failed;
+          </li>
+
+          <li>
+            maintain the technical operation and security
+            of the publishing workflow.
+          </li>
+        </ul>
+
+      </section>
+
+
+      <!-- 06 -->
+
+      <section>
+
+        <span class="section-number">
+          06 — Sharing
+        </span>
+
+        <h2>Data Sharing & Sale</h2>
+
+        <p>
+          EZ Good Finds does not sell personal information
+          or social-platform user data obtained through
+          authorised API integrations.
+        </p>
+
+        <p>
+          Information may be transmitted to the relevant
+          platform or infrastructure provider when
+          technically necessary to perform an action that
+          has been authorised, such as authentication or
+          publishing.
+        </p>
+
+      </section>
+
+
+      <!-- 07 -->
+
+      <section>
+
+        <span class="section-number">
+          07 — Automation
+        </span>
+
+        <h2>Publishing Software</h2>
+
+        <p>
+          EZ Good Finds may use self-hosted publishing and
+          automation software, including Postiz, to manage
+          authorised social-media integrations.
+        </p>
+
+        <p>
+          These systems are intended to help prepare,
+          schedule and publish EZ Good Finds content across
+          supported platforms.
+        </p>
+
+      </section>
+
+
+      <!-- 08 -->
+
+      <section>
+
+        <span class="section-number">
+          08 — Artificial Intelligence
+        </span>
+
+        <h2>AI & Platform Data</h2>
+
+        <p>
+          Social-platform user data obtained through
+          authentication APIs is not used by EZ Good Finds
+          to train artificial-intelligence models.
+        </p>
+
+        <p>
+          EZ Good Finds may use automation or
+          artificial-intelligence tools in its broader
+          content-production process, but this does not
+          mean private social-platform user data obtained
+          through account integrations is used for AI
+          model training.
+        </p>
+
+      </section>
+
+
+      <!-- 09 -->
+
+      <section>
+
+        <span class="section-number">
+          09 — Security
+        </span>
+
+        <h2>Authentication & Security</h2>
+
+        <p>
+          Access tokens, authentication credentials and
+          similar information are intended to be used only
+          for authorised integrations and account
+          operations.
+        </p>
+
+        <p>
+          Reasonable technical measures are used to limit
+          unauthorised access to integration credentials
+          and associated systems.
+        </p>
+
+      </section>
+
+
+      <!-- 10 -->
+
+      <section>
+
+        <span class="section-number">
+          10 — Retention
+        </span>
+
+        <h2>Data Retention</h2>
+
+        <p>
+          Authentication information and integration data
+          may be retained for as long as reasonably
+          necessary to maintain an authorised connection
+          or publishing workflow.
+        </p>
+
+        <p>
+          If an account or integration is disconnected,
+          related access credentials may be revoked,
+          invalidated or deleted when they are no longer
+          required.
+        </p>
+
+      </section>
+
+
+      <!-- 11 -->
+
+      <section>
+
+        <span class="section-number">
+          11 — External Links
+        </span>
+
+        <h2>Affiliate & Third-Party Links</h2>
+
+        <p>
+          EZ Good Finds content may occasionally contain
+          links to third-party websites, products,
+          services or retailers.
+        </p>
+
+        <p>
+          Some links may be affiliate links. If a purchase
+          is made through an eligible affiliate link,
+          EZ Good Finds may receive a commission without
+          necessarily increasing the price paid by the
+          visitor.
+        </p>
+
+        <p>
+          Third-party websites and services operate under
+          their own privacy practices and policies.
+        </p>
+
+      </section>
+
+
+      <!-- 12 -->
+
+      <section>
+
+        <span class="section-number">
+          12 — Hosting
+        </span>
+
+        <h2>This Privacy Policy Page</h2>
+
+        <p>
+          This page is provided as a public information
+          page for EZ Good Finds.
+        </p>
+
+        <p>
+          The page itself does not contain a user account
+          system, advertising tracker or data-entry form
+          operated by EZ Good Finds.
+        </p>
+
+        <p>
+          The hosting provider may process ordinary
+          technical information required to serve the
+          webpage under its own terms and privacy policy.
+        </p>
+
+      </section>
+
+
+      <!-- 13 -->
+
+      <section>
+
+        <span class="section-number">
+          13 — Updates
+        </span>
+
+        <h2>Changes to This Policy</h2>
+
+        <p>
+          This Privacy Policy may be updated as
+          EZ Good Finds adds, removes or changes services,
+          integrations or publishing tools.
+        </p>
+
+        <p>
+          When material changes are made, the effective
+          date displayed on this page may be updated.
+        </p>
+
+      </section>
+
+
+      <!-- 14 -->
+
+      <section>
+
+        <span class="section-number">
+          14 — Contact
+        </span>
+
+        <h2>Contact</h2>
+
+        <p>
+          Questions regarding this Privacy Policy can be
+          sent to:
+        </p>
+
+        <p>
+          <a href="mailto:hometechez@gmail.com">
+            hometechez@gmail.com
+          </a>
+        </p>
+
+      </section>
+
+    </main>
+
+
+    <footer>
+
+      <div class="name">
+        EZ Good Finds
+      </div>
+
+      <div class="meta">
+        © 2026 EZ Good Finds · Privacy Policy
+      </div>
+
+    </footer>
+
+  </div>
 
 </body>
 </html>
